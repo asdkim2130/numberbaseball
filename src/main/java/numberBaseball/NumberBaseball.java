@@ -52,24 +52,22 @@ public class NumberBaseball {
 //            }if(computerNumber.get(2) == user3){
 //                strike++;
 //            }
-//
-//
-//
-//
-//            //볼 카운트
-//            if(computerNumber.get(0) == user2 || computerNumber.get(0) == user3){
-//                ball++;
-//            }if(computerNumber.get(1) == user1 || computerNumber.get(1) == user3){
-//                ball++;
-//            }if(computerNumber.get(2) == user1 || computerNumber.get(2) == user2){
-//                ball++;
-//            }
 
             // 스트라이크 카운트 반복문으로 변경
             for (int i = 0; i < 3; i++) {
                 if(computerNumber.get(i) == userNumber.get(i)){
                     strike++;
                 }
+
+//            //볼 카운트
+            if(computerNumber.get(0) == userNumber.get(2) || computerNumber.get(0) == userNumber.get(3)){
+                ball++;
+            }if(computerNumber.get(1) == userNumber.get(1) || computerNumber.get(1) == userNumber.get(3)){
+                ball++;
+            }if(computerNumber.get(2) == userNumber.get(1) || computerNumber.get(2) == userNumber.get(2)){
+                ball++;
+            }
+
 
             System.out.println(strike + " 스트라이크 " + ball + " 볼");
 
