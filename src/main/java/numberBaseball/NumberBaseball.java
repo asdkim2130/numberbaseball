@@ -65,6 +65,12 @@ public class NumberBaseball {
 //                ball++;
 //            }
 
+            // 스트라이크 카운트 반복문으로 변경
+            for (int i = 0; i < 3; i++) {
+                if(computerNumber.get(i) == userNumber.get(i)){
+                    strike++;
+                }
+
             System.out.println(strike + " 스트라이크 " + ball + " 볼");
 
 
