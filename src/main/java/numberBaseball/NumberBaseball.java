@@ -1,6 +1,9 @@
 package numberBaseball;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 import static jdk.internal.org.jline.reader.impl.LineReaderImpl.CompletionType.List;
@@ -28,10 +31,23 @@ public class NumberBaseball {
             int ball = 0;
 
             //컴퓨터 입력을 변수에서 리스트로
+//            ArrayList<Integer> computerNumber = new ArrayList<>();
+//            computerNumber.add(1);
+//            computerNumber.add(2);
+//            computerNumber.add(3);
+
+            // 랜덤으로 컴퓨터 입력 받기
+            // random을 쓰면 중복의 가능성이 있기 때문에 1~9까지 숫자로 pool 리스트를 만든 후 순서를 섞어서
+            // computerNumber 리스트로 가져온다
+            ArrayList<Integer> numberPool = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 8)
+            );
+            Collections.shuffle(numberPool);
+
             ArrayList<Integer> computerNumber = new ArrayList<>();
-            computerNumber.add(1);
-            computerNumber.add(2);
-            computerNumber.add(3);
+            computerNumber.add(numberPool.get(0));
+            computerNumber.add(numberPool.get(1));
+            computerNumber.add(numberPool.get(2));
+
 
             //사용자 입력 리스트로
             ArrayList<Integer> userNumber = new ArrayList<>();
@@ -68,6 +84,7 @@ public class NumberBaseball {
 //                ball++;
 //            }
 
+                //볼 카운트 반복문으로 변경
                 for (int j = 0; j < 3; j++) {
                     for (int k = 0; k < 3; k++) {
                         if(j == k) {
