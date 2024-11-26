@@ -71,11 +71,11 @@ public class NumberBaseball {
 
             // 스트라이크 카운트 반복문으로 변경
             for (int i = 0; i < 3; i++) {
-                if(computerNumber.get(i) == userNumber.get(i)){
+                if (computerNumber.get(i) == userNumber.get(i)) {
                     strike++;
                 }
-
-             //볼 카운트
+            }
+            //볼 카운트
 //            if(computerNumber.get(0) == userNumber.get(2) || computerNumber.get(0) == userNumber.get(3)){
 //                ball++;
 //            }if(computerNumber.get(1) == userNumber.get(1) || computerNumber.get(1) == userNumber.get(3)){
@@ -84,26 +84,41 @@ public class NumberBaseball {
 //                ball++;
 //            }
 
-                //볼 카운트 반복문으로 변경
-                for (int j = 0; j < 3; j++) {
-                    for (int k = 0; k < 3; k++) {
-                        if(j == k) {
-                            continue;
-                        }if(computerNumber.get(j) != computerNumber.get(k) ){
-                        ball++;}
+            //볼 카운트 반복문으로 변경
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 3; k++) {
+                    if (j == k) {
+                        continue;
                     }
+                    if (computerNumber.get(j) != computerNumber.get(k)) {
+                        ball++;
                     }
                 }
+            }
 
 
-            System.out.println(strike + " 스트라이크 " + ball + " 볼");
+            printResult(strike, ball);
 
 
             //브레이크
-            if(strike == 3){break;}
+            if (strike == 3) {
+                break;
+            }
+        }
+
+        }
 
 
-        }   // 결과출력
-        System.out.println("축하합니다! 정답을 맞히셨습니다.");
+        static void printResult ( int strike, int ball){
+            if (strike == 0 && ball == 0) {
+                System.out.println("아웃!");
+            } else if (strike == 3) {
+                System.out.println("축하합니다! 정답을 맞히셨습니다.");
+            } else System.out.println(strike + " 스트라이크 " + ball + " 볼");
+
+
+        }
+
+
     }
-}
+
