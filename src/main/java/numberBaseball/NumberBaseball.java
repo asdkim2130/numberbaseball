@@ -21,11 +21,17 @@ public class NumberBaseball {
 
         while (!isCorrect) {
             //변수
-            int computerNumber1 = 1;
-            int computerNumber2 = 2;
-            int computerNumber3 = 3;
+//            int computerNumber1 = 1;
+//            int computerNumber2 = 2;
+//            int computerNumber3 = 3;
             int strike = 0;
             int ball = 0;
+
+            //컴퓨터 입력을 변수에서 리스트로
+            ArrayList<Integer> computerNumber = new ArrayList<>();
+            computerNumber.add(1);
+            computerNumber.add(2);
+            computerNumber.add(3);
 
             // 사용자 입력 받기 (이 부분은 미리 제공됨)
             System.out.print("\n첫 번째 숫자를 입력하세요: ");
@@ -37,21 +43,21 @@ public class NumberBaseball {
 
 
             //스트라이크 카운트
-            if(computerNumber1 == user1){
+            if(computerNumber.get(0) == user1){
                 strike++;
-            }if(computerNumber2 == user2){
+            }if(computerNumber.get(1) == user2){
                 strike++;
-            }if(computerNumber3 == user3){
+            }if(computerNumber.get(2) == user3){
                 strike++;
             }
 
 
             //볼 카운트
-            if(computerNumber1 == user2 || computerNumber1 == user3){
+            if(computerNumber.get(0) == user2 || computerNumber.get(0) == user3){
                 ball++;
-            }if(computerNumber2 == user1 || computerNumber2 == user3){
+            }if(computerNumber.get(1) == user1 || computerNumber.get(1) == user3){
                 ball++;
-            }if(computerNumber3 == user1 || computerNumber3 == user2){
+            }if(computerNumber.get(2) == user1 || computerNumber.get(2) == user2){
                 ball++;
             }
 
