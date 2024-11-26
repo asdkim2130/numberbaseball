@@ -1,12 +1,9 @@
 package numberBaseball;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-
-import static jdk.internal.org.jline.reader.impl.LineReaderImpl.CompletionType.List;
 
 
 public class NumberBaseball {
@@ -24,17 +21,9 @@ public class NumberBaseball {
 
         while (!isCorrect) {
             //변수
-//            int computerNumber1 = 1;
-//            int computerNumber2 = 2;
-//            int computerNumber3 = 3;
             int strike = 0;
             int ball = 0;
 
-            //컴퓨터 입력을 변수에서 리스트로
-//            ArrayList<Integer> computerNumber = new ArrayList<>();
-//            computerNumber.add(1);
-//            computerNumber.add(2);
-//            computerNumber.add(3);
 
             // 랜덤으로 컴퓨터 입력 받기
             // random을 쓰면 중복의 가능성이 있기 때문에 1~9까지 숫자로 pool 리스트를 만든 후 순서를 섞어서
@@ -60,14 +49,6 @@ public class NumberBaseball {
             userNumber.add(scanner.nextInt());
 
 
-            //스트라이크 카운트
-//            if(computerNumber.get(0) == user1){
-//                strike++;
-//            }if(computerNumber.get(1) == user2){
-//                strike++;
-//            }if(computerNumber.get(2) == user3){
-//                strike++;
-//            }
 
             // 스트라이크 카운트 반복문으로 변경
             for (int i = 0; i < 3; i++) {
@@ -75,14 +56,7 @@ public class NumberBaseball {
                     strike++;
                 }
             }
-            //볼 카운트
-//            if(computerNumber.get(0) == userNumber.get(2) || computerNumber.get(0) == userNumber.get(3)){
-//                ball++;
-//            }if(computerNumber.get(1) == userNumber.get(1) || computerNumber.get(1) == userNumber.get(3)){
-//                ball++;
-//            }if(computerNumber.get(2) == userNumber.get(1) || computerNumber.get(2) == userNumber.get(2)){
-//                ball++;
-//            }
+
 
             //볼 카운트 반복문으로 변경
             for (int j = 0; j < 3; j++) {
@@ -96,7 +70,7 @@ public class NumberBaseball {
                 }
             }
 
-
+            //결과 출력
             printResult(strike, ball);
 
 
@@ -108,7 +82,7 @@ public class NumberBaseball {
 
         }
 
-
+        // 결과출력 함수
         static void printResult ( int strike, int ball){
             if (strike == 0 && ball == 0) {
                 System.out.println("아웃!");
