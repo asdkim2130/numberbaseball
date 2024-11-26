@@ -3,7 +3,7 @@ package numberBaseball;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+import static jdk.internal.org.jline.reader.impl.LineReaderImpl.CompletionType.List;
 
 
 public class NumberBaseball {
@@ -33,33 +33,37 @@ public class NumberBaseball {
             computerNumber.add(2);
             computerNumber.add(3);
 
-            // 사용자 입력 받기 (이 부분은 미리 제공됨)
+            //사용자 입력 리스트로
+            ArrayList<Integer> userNumber = new ArrayList<>();
+
             System.out.print("\n첫 번째 숫자를 입력하세요: ");
-            int user1 = scanner.nextInt();
+            userNumber.add(scanner.nextInt());
             System.out.print("두 번째 숫자를 입력하세요: ");
-            int user2 = scanner.nextInt();
+            userNumber.add(scanner.nextInt());
             System.out.print("세 번째 숫자를 입력하세요: ");
-            int user3 = scanner.nextInt();
+            userNumber.add(scanner.nextInt());
 
 
             //스트라이크 카운트
-            if(computerNumber.get(0) == user1){
-                strike++;
-            }if(computerNumber.get(1) == user2){
-                strike++;
-            }if(computerNumber.get(2) == user3){
-                strike++;
-            }
-
-
-            //볼 카운트
-            if(computerNumber.get(0) == user2 || computerNumber.get(0) == user3){
-                ball++;
-            }if(computerNumber.get(1) == user1 || computerNumber.get(1) == user3){
-                ball++;
-            }if(computerNumber.get(2) == user1 || computerNumber.get(2) == user2){
-                ball++;
-            }
+//            if(computerNumber.get(0) == user1){
+//                strike++;
+//            }if(computerNumber.get(1) == user2){
+//                strike++;
+//            }if(computerNumber.get(2) == user3){
+//                strike++;
+//            }
+//
+//
+//
+//
+//            //볼 카운트
+//            if(computerNumber.get(0) == user2 || computerNumber.get(0) == user3){
+//                ball++;
+//            }if(computerNumber.get(1) == user1 || computerNumber.get(1) == user3){
+//                ball++;
+//            }if(computerNumber.get(2) == user1 || computerNumber.get(2) == user2){
+//                ball++;
+//            }
 
             System.out.println(strike + " 스트라이크 " + ball + " 볼");
 
